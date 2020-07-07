@@ -167,15 +167,24 @@ window.view = {
     	this.clearDivs()
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
-		if (selected_loop === 'for' && inputValue !== '' && !isNaN(model.inp) )
-		{
+		
+			if ( inputValue>20 || inputValue == '' )
+		{   
+	        alert('Invalid input')
+			return false;
+		}
+		
+		
+		
+		 else if (selected_loop === 'for' && inputValue !== '' && !isNaN(model.inp) )
+		{   
 			this.displayLoop('forLoopContent', 'codeContentFor1')
 		}
-		if (selected_loop === 'while' && inputValue !== '' && !isNaN(model.inp))
+		else if (selected_loop === 'while' && inputValue !== '' && !isNaN(model.inp))
 		{
 			this.displayLoop('whileLoopContent', 'codeContentWhile1')
 		}
-		if (selected_loop === 'do-while' && inputValue !== '' && !isNaN(model.inp))
+		else if (selected_loop === 'do-while' && inputValue !== '' && !isNaN(model.inp))
 		{
 		 	this.displayLoop('dowhileLoopContent', 'codeContentDoWhile1')
 		}
