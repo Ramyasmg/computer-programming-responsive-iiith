@@ -168,7 +168,7 @@ window.view = {
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
 		
-			if ( inputValue>20 || inputValue == '' )
+			if (inputValue<0 || inputValue>20 || inputValue == '' )
 		{   
 	        alert('Invalid input')
 			return false;
